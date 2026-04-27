@@ -71,7 +71,7 @@ body > nav.nav{display:flex}
 .splash-stat-num{font-family:var(--fd);font-size:clamp(24px,2.4vw,32px);font-weight:500;letter-spacing:-.04em;color:var(--blue);line-height:1}
 .splash-stat-lbl{font-size:11px;font-weight:500;color:var(--muted);text-transform:lowercase;letter-spacing:.01em}
 .splash-ctas{display:flex;gap:12px;}
-.splash-right{display:flex;flex-direction:column;justify-content:space-between;gap:20px;min-height:0;}
+.splash-right{display:flex;flex-direction:column;gap:48px;min-height:0;padding-left:64px;padding-top:8px;justify-content:flex-start;align-items:flex-start}
 .countdown-label{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
 .countdown-digits{display:flex;gap:10px;align-items:flex-end;}
 .cd-unit{display:flex;flex-direction:column;align-items:center;gap:4px;}
@@ -904,7 +904,7 @@ body > nav.nav{display:flex}
   .splash-left{padding-right:0}
   .splash-title{font-size:clamp(28px,8vw,48px)}
   .splash-ctas{flex-wrap:wrap}
-  .splash-right{gap:16px}
+  .splash-right{gap:24px;padding-left:0;padding-top:0}
   .countdown-digits{gap:6px}
   .cd-num{font-size:clamp(18px,5vw,36px);padding:6px 10px;min-width:40px}
   .scroll-hint{display:none}
@@ -1064,7 +1064,7 @@ var STRIPE_PRICES = {
             <h1 class="splash-title" style="margin-top:24px">
               prêt·e pour le brevet<br>
               de maths ?<br>
-              <span class="accent">génère un brevet pour<br>te situer.</span>
+              <span class="accent">génère un brevet<br>pour te situer.</span>
             </h1>
             <div class="home-official-badge" style="margin-top:24px">
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 .5l1.7 3.5 3.8.5-2.7 2.7.6 3.8L7 9.3 3.6 11l.6-3.8L1.5 4.5l3.8-.5L7 .5z" fill="currentColor"/></svg>
@@ -1098,8 +1098,8 @@ var STRIPE_PRICES = {
             </div>
           </div>
 
-          <!-- Écran 3D avec question -->
-          <div style="flex:1;display:flex;align-items:center;justify-content:center;perspective:800px">
+          <!-- Écran 3D avec dashboard -->
+          <div style="display:flex;align-items:flex-start;justify-content:flex-start;perspective:800px;width:100%">
             <div id="screen3d" style="width:100%;max-width:380px;transform:rotateY(-8deg) rotateX(4deg);transform-style:preserve-3d;transition:transform .4s ease" onmouseenter="this.style.transform='rotateY(-3deg) rotateX(2deg)'" onmouseleave="this.style.transform='rotateY(-8deg) rotateX(4deg)'">
               <!-- Boîtier écran -->
               <div style="background:var(--ink);border-radius:16px;padding:10px;box-shadow:0 40px 80px rgba(0,0,0,.35),0 0 0 1px rgba(255,255,255,.06)">
