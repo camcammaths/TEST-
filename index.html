@@ -248,18 +248,29 @@ body > nav.nav{display:flex}
 .exo-demo-col-right .exo-demo-wheel-wrap svg{max-width:240px}
 
 /* BRIDGE : transition démo → comparatif */
-.home-bridge{padding:80px 48px;text-align:center;background:var(--bg);display:flex;flex-direction:column;align-items:center;gap:40px}
+.home-bridge{padding:80px 48px 120px;text-align:center;background:var(--bg);display:flex;flex-direction:column;align-items:center;gap:40px}
 .home-bridge-quote{font-family:var(--fd);font-size:clamp(22px,2.6vw,34px);font-weight:400;letter-spacing:-.03em;line-height:1.25;text-transform:lowercase;max-width:28ch;margin:0 auto;color:var(--ink);position:relative}
 .home-bridge-quote strong{font-weight:600;color:var(--blue)}
 .home-bridge-mark{color:var(--orange);font-weight:500;font-size:1.2em;line-height:0;vertical-align:-.15em;margin:0 .1em}
-.home-bridge-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(0,0,0,.08);border-radius:14px;overflow:hidden;width:100%;max-width:720px;margin:0 auto}
+.home-bridge-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(0,0,0,.08);border-radius:14px;overflow:hidden;width:100%;max-width:1100px;margin:0 auto}
 .home-bridge-stat{background:var(--white);padding:22px 16px;display:flex;flex-direction:column;gap:6px}
 .home-bridge-stat-num{font-family:var(--fd);font-size:clamp(26px,3vw,38px);font-weight:500;letter-spacing:-.04em;color:var(--blue);line-height:1}
 .home-bridge-stat-lbl{font-size:11px;color:var(--muted);font-weight:400;line-height:1.35;letter-spacing:.01em}
 
 @media (max-width:700px){
-  .home-bridge{padding:56px 24px;gap:32px}
+  .home-bridge{padding:56px 24px 80px;gap:32px}
   .home-bridge-stats{grid-template-columns:repeat(2,1fr)}
+}
+
+/* Transition hero → démo */
+.home-transition{padding:64px 48px 24px;display:flex;flex-direction:column;align-items:center;gap:28px;text-align:center}
+.home-transition-line{width:1px;height:48px;background:linear-gradient(to bottom,transparent,rgba(0,33,188,.3),var(--blue))}
+.home-transition-text{font-family:var(--fd);font-size:clamp(16px,1.6vw,22px);font-weight:400;color:var(--muted);letter-spacing:-.02em;line-height:1.4;text-transform:lowercase;max-width:32ch;margin:0}
+.home-transition-text strong{color:var(--ink);font-weight:500}
+
+@media (max-width:700px){
+  .home-transition{padding:48px 24px 16px;gap:20px}
+  .home-transition-line{height:36px}
 }
 
 /* 16/9 DEMO SECTION (style DA Brévise) */
@@ -1095,28 +1106,76 @@ var STRIPE_PRICES = {
                 <!-- Écran -->
                 <div style="background:#EDEEF0;border-radius:10px;overflow:hidden;position:relative">
                   <!-- Barre nav -->
-                  <div style="background:var(--ink);padding:8px 14px;display:flex;align-items:center;justify-content:space-between">
-                    <div style="font-size:10px;font-weight:600;color:rgba(255,255,255,.7);letter-spacing:.05em">brévise · exercice 2</div>
-                    <div style="font-size:10px;font-weight:700;color:var(--orange)">01:42:17</div>
+                  <div style="background:var(--blue);padding:10px 14px;display:flex;align-items:center;justify-content:space-between">
+                    <div style="font-family:var(--fd);font-size:14px;font-weight:800;color:#fff;letter-spacing:-.04em;text-transform:uppercase;line-height:1">b<span style="color:#EE6E34">.</span>révise</div>
+                    <div style="font-size:9px;font-weight:600;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.15em">tableau de bord</div>
                   </div>
-                  <!-- Contenu question -->
-                  <div style="padding:16px 18px">
-                    <div style="font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:8px">probabilités · question 1 / 2</div>
-                    <div style="font-size:13px;font-weight:500;color:var(--ink);line-height:1.6;margin-bottom:14px">
-                      une roulette a 18 cases alternant rouge et noir. quelle est la probabilité de tomber sur une case rouge portant un numéro pair ?
+
+                  <!-- KPI principal : ta moyenne -->
+                  <div style="padding:11px 14px 8px;display:flex;align-items:flex-end;justify-content:space-between;gap:10px;background:#fff">
+                    <div>
+                      <div style="font-size:8px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:2px">ta moyenne</div>
+                      <div style="display:flex;align-items:baseline;gap:5px">
+                        <span style="font-family:var(--fd);font-size:26px;font-weight:600;letter-spacing:-.04em;color:var(--blue);line-height:1">15,2</span>
+                        <span style="font-size:11px;color:var(--muted);font-weight:400">/20</span>
+                      </div>
                     </div>
-                    <!-- Zone réponse -->
-                    <div style="background:var(--white);border:1.5px solid rgba(0,0,0,.1);border-radius:8px;padding:10px 12px;font-size:12px;color:var(--muted);font-style:italic;margin-bottom:12px">
-                      écris ta réponse ici…
-                    </div>
-                    <!-- Bouton valider -->
-                    <div style="display:flex;justify-content:flex-end">
-                      <div style="background:var(--blue);color:#fff;font-size:11px;font-weight:600;padding:7px 16px;border-radius:100px;text-transform:lowercase">valider →</div>
+                    <div style="display:inline-flex;align-items:center;gap:4px;background:rgba(34,197,94,.12);color:#16803E;font-size:9px;font-weight:700;padding:3px 8px;border-radius:100px;letter-spacing:.01em">
+                      <svg width="8" height="8" viewBox="0 0 9 9" fill="none"><path d="M4.5 1.5L8 5H6v2.5H3V5H1l3.5-3.5z" fill="currentColor"/></svg>
+                      <span>+3,2 pts</span>
                     </div>
                   </div>
-                  <!-- Barre de progression -->
-                  <div style="height:3px;background:rgba(0,0,0,.08)">
-                    <div style="height:100%;width:40%;background:var(--blue);border-radius:100px"></div>
+
+                  <!-- Courbe de progression -->
+                  <div style="background:#fff;padding:0 8px 10px">
+                    <svg viewBox="0 0 320 50" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block">
+                      <defs>
+                        <linearGradient id="grad-progress" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="0%" stop-color="#0021BC" stop-opacity=".18"/>
+                          <stop offset="100%" stop-color="#0021BC" stop-opacity="0"/>
+                        </linearGradient>
+                      </defs>
+                      <!-- gridlines -->
+                      <g stroke="rgba(0,0,0,.05)" stroke-width="1" stroke-dasharray="2 3">
+                        <line x1="0" y1="14" x2="320" y2="14"/>
+                        <line x1="0" y1="30" x2="320" y2="30"/>
+                      </g>
+                      <!-- aire sous la courbe -->
+                      <path d="M 10 40 L 60 36 L 110 33 L 160 27 L 210 22 L 260 17 L 310 10 L 310 50 L 10 50 Z" fill="url(#grad-progress)"/>
+                      <!-- ligne -->
+                      <path d="M 10 40 L 60 36 L 110 33 L 160 27 L 210 22 L 260 17 L 310 10" fill="none" stroke="#0021BC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <!-- points -->
+                      <g fill="#fff" stroke="#0021BC" stroke-width="1.8">
+                        <circle cx="10" cy="40" r="2.5"/>
+                        <circle cx="60" cy="36" r="2.5"/>
+                        <circle cx="110" cy="33" r="2.5"/>
+                        <circle cx="160" cy="27" r="2.5"/>
+                        <circle cx="210" cy="22" r="2.5"/>
+                        <circle cx="260" cy="17" r="2.5"/>
+                      </g>
+                      <circle cx="310" cy="10" r="3.5" fill="#EE6E34" stroke="#fff" stroke-width="1.5"/>
+                    </svg>
+                  </div>
+
+                  <!-- Liste des derniers brevets (compactée à 2) -->
+                  <div style="background:var(--bg);padding:8px 12px 10px">
+                    <div style="font-size:8px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:6px">tes derniers brevets blancs</div>
+                    <div style="display:flex;flex-direction:column;gap:4px">
+                      <div style="background:#fff;border-radius:6px;padding:6px 10px;display:flex;align-items:center;justify-content:space-between;border:1px solid rgba(0,33,188,.15)">
+                        <div style="display:flex;align-items:center;gap:6px;min-width:0">
+                          <div style="width:5px;height:5px;border-radius:50%;background:#22C55E;flex-shrink:0"></div>
+                          <span style="font-size:10px;font-weight:500;color:var(--ink)">brevet n°6 · hier</span>
+                        </div>
+                        <span style="font-family:var(--fd);font-size:12px;font-weight:700;color:var(--blue);letter-spacing:-.02em">17/20</span>
+                      </div>
+                      <div style="background:#fff;border-radius:6px;padding:6px 10px;display:flex;align-items:center;justify-content:space-between">
+                        <div style="display:flex;align-items:center;gap:6px;min-width:0">
+                          <div style="width:5px;height:5px;border-radius:50%;background:#22C55E;flex-shrink:0"></div>
+                          <span style="font-size:10px;font-weight:500;color:var(--ink)">brevet n°5 · il y a 3 jours</span>
+                        </div>
+                        <span style="font-family:var(--fd);font-size:12px;font-weight:700;color:var(--ink);letter-spacing:-.02em">15/20</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1139,12 +1198,18 @@ var STRIPE_PRICES = {
       </div>
     </section>
 
+    <!-- TRANSITION HERO → DÉMO -->
+    <div class="home-transition">
+      <div class="home-transition-line"></div>
+      <p class="home-transition-text">d'abord, <strong>tu regardes à quoi ça ressemble.</strong></p>
+    </div>
+
     <!-- DÉMO PRODUIT 16/9 -->
     <section class="home-demo-section" id="home-demo-16-9">
       <div class="home-demo-header">
         <div class="home-eyebrow">démo</div>
-        <h2 class="home-h2">essaie, <span class="accent">là, maintenant.</span></h2>
-        <p class="home-lead">voici le premier exercice d'un sujet brévise. fais tourner la roulette, écris ta réponse — comme le jour j.</p>
+        <h2 class="home-h2">prêt·e à répondre à une question qui peut <span class="accent">tomber le jour j ?</span></h2>
+        <p class="home-lead">fais tourner la roulette, écris ta réponse, regarde la correction. exactement ce qui t'attend dans un sujet brévise.</p>
       </div>
       <div class="demo-stage">
         <div class="demo-stage-inner">
@@ -1171,8 +1236,7 @@ var STRIPE_PRICES = {
                     <p class="exo-demo-intro">une roulette de casino est divisée en <strong>18 cases identiques</strong>, numérotées de 1 à 18, alternant entre <strong style="color:#C8312A">rouge</strong> et <strong>noir</strong>. on la fait tourner.</p>
 
                     <div class="exo-demo-q">
-                      <div class="exo-demo-qnum">1.</div>
-                      <div class="exo-demo-qtext">quelle est la probabilité que la bille tombe sur une case <strong style="color:#C8312A">rouge</strong> portant un numéro <strong>pair</strong> ?</div>
+                      <div class="exo-demo-qtext">quelle est la probabilité que la bille tombe sur une case <strong style="color:#C8312A">rouge</strong> ?</div>
                     </div>
                     <div class="exo-demo-answer">
                       <label class="exo-demo-answer-lbl">ta réponse</label>
@@ -1189,7 +1253,7 @@ var STRIPE_PRICES = {
                         <span class="exo-demo-reveal-pts">+5 points</span>
                       </div>
                       <div class="exo-demo-reveal-body">
-                        sur 18 cases, <strong>9 sont rouges</strong>. parmi ces 9 rouges, <strong>4 portent un numéro pair</strong> (2, 8, 12, 16). probabilité : <strong>4/18 = 2/9 ≈ 0,22</strong>.
+                        sur 18 cases au total, <strong>9 sont rouges</strong>. la probabilité est donc <strong>9/18 = 1/2 = 0,5</strong>.
                       </div>
                     </div>
                   </div>
@@ -1341,7 +1405,7 @@ var STRIPE_PRICES = {
           var raw = (input.value || '').trim().toLowerCase().replace(/\s+/g,'').replace(',', '.');
           if(!raw) return;
           // Formes acceptées : 4/18, 2/9, 0.22, 0.222, 0.2222, 22%, 22.2%, ~0.22
-          var accepted = ['4/18','2/9','0.22','0.222','0.2222','22%','22.2%','22.22%','0,22'];
+          var accepted = ['1/2','9/18','0.5','50%','0,5'];
           // normaliser : retirer % en fin et transformer fractions
           var isRight = false;
           // test littéral
@@ -1351,7 +1415,7 @@ var STRIPE_PRICES = {
             var fm = raw.match(/^(\d+)\/(\d+)$/);
             if(fm){
               var a = parseInt(fm[1],10), b = parseInt(fm[2],10);
-              if(b>0 && Math.abs(a/b - 4/18) < 0.005) isRight = true;
+              if(b>0 && Math.abs(a/b - 0.5) < 0.005) isRight = true;
             }
           }
           // test décimal
@@ -1359,7 +1423,7 @@ var STRIPE_PRICES = {
             var num = parseFloat(raw.replace('%',''));
             if(!isNaN(num)){
               if(raw.indexOf('%') >= 0) num = num/100;
-              if(Math.abs(num - 4/18) < 0.01) isRight = true;
+              if(Math.abs(num - 0.5) < 0.01) isRight = true;
             }
           }
 
@@ -1497,16 +1561,6 @@ var STRIPE_PRICES = {
           <div class="home-compare-brevise"><span class="yes">✓ détaillée, étape par étape</span></div>
           <div class="home-compare-other"><span class="no">✕ souvent expéditive</span></div>
         </div>
-        <div class="home-compare-row">
-          <div class="home-compare-feat">coût sur l'année</div>
-          <div class="home-compare-brevise"><span class="yes">✓ moins d'un cahier par mois</span></div>
-          <div class="home-compare-other"><span class="no">✕ 2 à 3 cahiers à racheter</span></div>
-        </div>
-        <div class="home-compare-row">
-          <div class="home-compare-feat">ta confiance le jour j</div>
-          <div class="home-compare-brevise"><span class="yes">✓ c'est déjà familier</span></div>
-          <div class="home-compare-other"><span class="no">✕ tu découvres en ouvrant le sujet</span></div>
-        </div>
       </div>
     </section>
 
@@ -1548,7 +1602,7 @@ var STRIPE_PRICES = {
 
     <!-- CTA FINAL -->
     <section class="home-final-cta">
-      <h2>alors, <span style="color:#EE6E34">t'attends quoi ?</span></h2>
+      <h2>alors, <span style="color:#EE6E34">on brévise ?</span></h2>
       <p>il te reste <strong style="color:#fff"><span id="final-countdown-d">67</span> jours</strong> avant l'épreuve. chaque brevet blanc que tu fais maintenant, c'est un point de plus le mardi 30 juin.</p>
       <button class="btn" onclick="goTo('generer')">je génère mon premier brevet →</button>
       <div style="margin-top:20px;font-size:12px;color:rgba(255,255,255,.7);font-weight:400;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap">
